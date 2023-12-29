@@ -1,0 +1,64 @@
+{/*{
+            (() => {
+                try {
+                    const parsedData = JSON.parse(data.Foto_point);
+
+                    if (!Array.isArray(parsedData)) {
+                        // Single Image
+                        return (
+                            <ImageBackground
+                                blurRadius={10}
+                                source={{ uri: URL_server + "/image/" + data.Foto_point }}
+                                style={{ width: "100%", height: "250px", backgroundColor: "#79B9BB", borderRadius: 15 }}
+                            >
+                                <Image
+                                    resizeMode="contain"
+                                    height={300}
+                                    style={{ margin: "0px 0px 15px", borderRadius: 10 }}
+                                    source={{ uri: URL_server + "/image/" + data.Foto_point }}
+                                />
+                            </ImageBackground>
+                        );
+                    } else {
+                        // Carousel
+                        return (
+                            <>
+                                <Carousel
+                                    data={parsedData}
+                                    renderItem={({ item }) => (
+
+                                        <Image
+                                            resizeMode="contain"
+                                            height={300}
+                                            style={{ margin: "0px 0px 15px", borderRadius: 15 }}
+                                            source={{ uri: URL_server + "/image/" + item }}
+                                        />
+                                    )}
+
+                                    autoplay
+                                    autoplayInterval={10000}
+                                    loop={true}
+                                    containerCustomStyle={{ borderRadius: 15, backgroundColor: "#79B9BB" }}
+
+                                    sliderWidth={350}
+                                    itemWidth={350}
+
+                                    layout={'stack'}
+                                //inactiveSlideOpacity={0.7}
+                                //inactiveSlideScale={0.9}
+
+                                //onSnapToItem={(index) => console.log(`Snapped to item ${index}`)}
+
+                                />
+                            </>
+                        );
+                    }
+                } catch (error) {
+                    return (<Image
+                        style={{ width: "100%", height: 300, marginHorizontal: 'auto', marginVertical: 5, borderRadius: 10 }}
+                        source={{ uri: URL_server + "/image/" + data.Foto_point }}
+                    />
+                    );
+                }
+            })()
+        }*/}
